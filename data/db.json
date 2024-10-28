@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "email": "dule@teretane.net",
+      "password": "$2a$10$pAHZyOJu7sPIA6EznwEA3u4Yb.tFrKQQ.oi3O/WwJoCF9d4Ru7MHe",
+      "name": "Duško Perić",
+      "id": 1,
+      "playerScore":{
+        "points":20,
+        "won":5,
+        "lost":1
+      }
+    },
+    {
+      "email": "test@teretane.net",
+      "password": "test",
+      "name": "Player A",
+      "id": 2,
+      "playerScore":{
+        "points":13,
+        "won":4,
+        "lost":2
+      }
+    },
+    {
+      "email": "test2@teretane.net",
+      "password": "test",
+      "name": "Player B",
+      "id": 3,
+      "playerScore":{
+        "points":5,
+        "won":1,
+        "lost":4
+      }
+    }
+  ]
+}

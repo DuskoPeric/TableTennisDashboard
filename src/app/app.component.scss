@@ -1,0 +1,7 @@
+:host{
+    display: flex;
+    .pages-content{
+        //border: solid 1px rgba(255, 255, 255, 0.134);
+        width: calc(100% - 250px);
+    }
+}

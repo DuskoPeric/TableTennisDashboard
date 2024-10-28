@@ -1,0 +1,50 @@
+@import '../../shared/variables.scss';
+:host{
+    &.ng-invalid.ng-touched{
+        .input-holder{
+            &.submited{
+                border: solid 1px red;
+            }
+        }
+    }
+}
+.input-holder{
+    display: flex;
+    width: 100%;
+    background-color: $input-color;
+    margin-bottom: 20px;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    input{
+        border: none;
+        background: transparent;
+        font-size: 1.1rem;
+        width: 90%;
+        padding-left: 15px;
+        &::placeholder{
+            color: $main-color;
+        }
+        &:focus-visible{
+            outline: none;
+        }
+    }
+    .input-icon{
+        font-size: 1.2rem;
+        color: $main-color;
+    }
+    &.reduced{
+        background-color: #30304b;
+        padding: 15px 20px;
+        border-radius: 5px;
+        .input-icon{
+            color: white;
+        }
+        input{
+            color: white;
+            &::placeholder{
+                color: white;
+            }
+        }
+    }
+}

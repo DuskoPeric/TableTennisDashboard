@@ -1,0 +1,80 @@
+@import "../variables.scss";
+:host{
+    box-sizing: border-box;
+    display: block;
+    background: $main-dark-color;
+    height: calc(100vh - 30px); 
+    width: 250px;
+    border-radius: 30px;
+    padding-top: 60px;
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logo-drawing{
+            background: rgb(193,192,225);
+            background: linear-gradient(140deg, rgba(193,192,225,1) 0%, rgba(121,9,31,1) 43%);
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            position: relative;
+            .circle{
+                background: white;
+                border-radius: 50%;
+                width: 10px;
+                height: 10px;
+                position: absolute;
+                top: 15px;
+                left: 15px;
+            }
+        }
+        p{
+            margin: 0 0 0 10px;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+    }
+    .profile{
+        margin-top: 60px;
+        .profile-img-holder{
+            img{
+                margin: auto;
+                display: block;
+            }
+        }
+        .profile-name{
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+    }
+    nav{
+        margin-top: 60px;
+        ul{
+            li{
+                display: flex;
+                padding: 15px 40px;
+                border-left: solid 7px $main-dark-color;
+                cursor: pointer;
+                &:not(.active){
+                    &:hover{
+                        border-color: $menu-item-hover-color;
+                    }
+                }
+                &:hover{
+                    background: $menu-item-hover-color;
+                }
+                &.active{
+                    border-color: $menu-item-border-color;
+                }
+                .nav-icon{
+                    margin-right: 20px;;
+                }
+                span{
+                    font-weight: 500;
+                    
+                }
+            }
+        }
+    }
+}

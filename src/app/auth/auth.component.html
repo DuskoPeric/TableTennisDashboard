@@ -1,0 +1,42 @@
+<div class="signin">
+  <div class="signin-box" [ngClass]="{
+    'rotate': rotation === 'rotate',
+    'rotate-reverse': rotation === 'rotate-reverse'
+  }">
+    <h2>{{isRegister?'Sign Up':'Sign In'}}</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <app-input
+        placeholder="Email"
+        [icon]="icons.email"
+        type="email"
+        formControlName="email"
+        [submited]="submited"
+      ></app-input>
+      <app-input
+        placeholder="Password"
+        [icon]="icons.password"
+        type="password"
+        formControlName="password"
+        [submited]="submited"
+      ></app-input>
+      @if(isRegister){
+        <app-input
+        placeholder="Name"
+        [icon]="icons.name"
+        formControlName="name"
+        [submited]="submited"
+      ></app-input>
+      }
+
+      <div class="action-holder">
+        @if(isErrorMessage()){
+          <div class="error-holder">
+          <p>{{ errorMsg()?.message}}</p>
+        </div>
+      }
+        <app-button>{{isRegister? 'Sign Up' : 'Sign In'}}</app-button>
+      </div>
+    </form>
+    <p class="switch-view" (click)="switchView()">{{isRegister?'Already member?':'First time here? '}} <b>{{isRegister?'Sign In':'Sign Up'}}</b></p>
+  </div>
+</div>

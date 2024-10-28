@@ -1,0 +1,7 @@
+<div class="player-table">
+    <app-player-item [head]="true"/>
+    @for(player of players(); track player;let  i = $index){
+        <app-player-item [player]="player" [no]="order(i)"/>
+    }
+    
+</div>

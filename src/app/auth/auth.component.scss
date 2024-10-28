@@ -1,0 +1,56 @@
+@import '../shared/variables.scss';
+.signin {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .signin-box {
+    background-color: white;
+    width: 500px;
+    border-radius: 20px;
+    padding: 50px;
+    box-sizing: border-box;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.12);
+    animation-duration: .4s;
+    animation-timing-function: ease-in-out;
+    &.rotate{
+      animation-name: example;
+    }
+    &.rotate-reverse{
+      animation-name: example-reverse;
+    }
+    
+    h2 {
+      color: $main-color;
+      font-weight: 200;
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+    .switch-view{
+      color: $main-color;
+      cursor: pointer;
+    }
+    .error-holder{
+      color: red;
+      background-color: rgb(241, 201, 201);
+      border:solid 1px red;
+      padding:10px;
+      margin-bottom: 15px;
+      p{
+        margin: 0;
+      }
+    }
+  }
+}
+@keyframes example {
+  0%   {transform: rotateY(0deg);}
+  50%  {transform: rotateY(90deg);}
+  100%  {transform: rotateY(0deg);}
+}
+@keyframes example-reverse {
+  0%   {transform: rotateY(0deg);}
+  50%  {transform: rotateY(-90deg);}
+  100%  {transform: rotateY(0deg);}
+}

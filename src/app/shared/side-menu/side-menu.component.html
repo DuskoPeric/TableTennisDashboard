@@ -1,0 +1,28 @@
+<ng-content>
+    <div class="logo">
+        <div class="logo-drawing">
+            <div class="circle"></div>
+        </div>
+        <p>Table tennis</p>
+    </div>
+    @if(user()){
+        <div class="profile">
+            <div class="profile-img-holder">
+                <img src="assets/images/avatar.svg" alt="profile">
+            </div>
+            <p class="profile-name">{{user()?.name}}</p>
+        </div>
+    }
+    <nav>
+        <ul>
+            @if(!user()){
+                <li routerLink="/login" routerLinkActive="active"><fa-icon class="nav-icon" [icon]="icons.signin"></fa-icon><span href="">Log In</span></li>
+            }
+            @else{
+                <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><fa-icon class="nav-icon" [icon]="icons.dashboard"></fa-icon><span href="">Dashboard</span></li>
+                <li><fa-icon class="nav-icon" [icon]="icons.profile"></fa-icon><a href="">Profile</a></li>
+                <li (click)="logOut()"><fa-icon class="nav-icon" [icon]="icons.signout"></fa-icon><span href="">Log Out</span></li>
+            }
+        </ul>
+    </nav>
+</ng-content>
