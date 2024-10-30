@@ -23,7 +23,7 @@ export class InputComponent implements ControlValueAccessor {
   form=input<FormGroup>()
   placeholder=input<string>();
   type=input<string>('text');
-  @Input() icon?:IconProp;
+  icon=input.required<IconProp>()
 
   public formControl: FormControl = new FormControl();
   writeValue(value: any) {

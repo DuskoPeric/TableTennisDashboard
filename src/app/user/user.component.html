@@ -1,0 +1,19 @@
+<div class="profile-page">
+  <div class="profile-box">
+    <div class="profile-info">
+      <div class="image-holder">
+        <img [src]="'assets/images/'+user()?.userData?.avatar+'.svg'" alt="profile" />
+        <div class="edit">
+            <fa-icon [icon]="icons.edit"></fa-icon>
+        </div>
+      </div>
+      <div class="profile-data">
+        <h2>{{user()?.userData?.name}}</h2>
+        <p class="points"><fa-icon class="icon" [icon]="icons.star"></fa-icon>{{user()?.userData?.playerScore?.points}}</p>
+      </div>
+    </div>
+    <div class="profile-events">
+      <p>There is no events</p>
+    </div>
+  </div>
+</div>

@@ -21,8 +21,16 @@ export class AuthService {
   }
 
   signUp(data: Partial<UserData>) {
+    const registerData={...data,
+      avatar: "avatar",
+      playerScore: {
+        points: 0,
+        won: 0,
+        lost: 0
+      }
+    }
     this.handleUser(
-      this.http.post<AuthResponseData>(`${this.authUrl}/register`, data)
+      this.http.post<AuthResponseData>(`${this.authUrl}/register`, registerData)
     );
   }
 
@@ -30,10 +38,8 @@ export class AuthService {
     obs.subscribe({
       next: (userData) => {
         const user = new User(
-          userData.user.id,
-          userData.user.name,
+          userData.user,
           userData.accessToken,
-          userData.user.email
         );
         this.user.set(user);
         localStorage.setItem('userData', JSON.stringify(user));

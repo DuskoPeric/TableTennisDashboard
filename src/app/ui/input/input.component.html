@@ -1,6 +1,6 @@
 <div (click)="focusOnInput()" [class]="['input-holder',submited()?'submited':'',additionalClass()]">
-    @if(icon){
-        <fa-icon class="input-icon" [icon]="icon"></fa-icon>
+    @if(icon()){
+        <fa-icon class="input-icon" [icon]="icon()"></fa-icon>
     }
     <input #inputField [formControl]="formControl" [type]="type()" [placeholder]="placeholder()">
 </div>

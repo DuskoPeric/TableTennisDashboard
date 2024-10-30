@@ -8,9 +8,9 @@
     @if(user()){
         <div class="profile">
             <div class="profile-img-holder">
-                <img src="assets/images/avatar.svg" alt="profile">
+                <img [src]="'assets/images/'+user()?.userData?.avatar +'.svg'" alt="profile">
             </div>
-            <p class="profile-name">{{user()?.name}}</p>
+            <p class="profile-name">{{user()?.userData?.name}}</p>
         </div>
     }
     <nav>
@@ -20,7 +20,7 @@
             }
             @else{
                 <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><fa-icon class="nav-icon" [icon]="icons.dashboard"></fa-icon><span href="">Dashboard</span></li>
-                <li><fa-icon class="nav-icon" [icon]="icons.profile"></fa-icon><a href="">Profile</a></li>
+                <li routerLink="/profile" routerLinkActive="active"><fa-icon class="nav-icon" [icon]="icons.profile"></fa-icon><span href="">Profile</span></li>
                 <li (click)="logOut()"><fa-icon class="nav-icon" [icon]="icons.signout"></fa-icon><span href="">Log Out</span></li>
             }
         </ul>

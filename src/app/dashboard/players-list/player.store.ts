@@ -11,7 +11,7 @@ import { PlayerService } from './player.service';
 import { AuthService } from '../../auth/auth.service';
 export const PlayerStore = signalStore(
 { providedIn: 'root' },
-  withState<PlayerState>({ players: [], sort: '', searchTerm: '' }),
+  withState<PlayerState>({ players: [], sort: '-playerScore.points', searchTerm: '' }),
   withComputed((store) => ({
     filteredPlayers: computed(() =>
       store

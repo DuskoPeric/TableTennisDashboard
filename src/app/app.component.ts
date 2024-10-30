@@ -21,7 +21,7 @@ export class AppComponent implements OnInit{
     const userData=localStorage.getItem('userData')
     if(userData){
       const user=JSON.parse(userData)
-      const newUser=new User(user.id,user.name,user._token,user.email)
+      const newUser=new User(user.userData,user._token)
       this.authService.user.set(newUser);
     }
   }

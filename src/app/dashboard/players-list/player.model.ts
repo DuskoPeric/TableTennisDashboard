@@ -8,6 +8,7 @@ export type Player = {
   name: string;
   id: number;
   email: string;
+  avatar:string;
   playerScore: PlayerScore;
 };
 
